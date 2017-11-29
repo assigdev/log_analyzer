@@ -150,13 +150,12 @@ def main(argv):
     filename = get_last_log_file()
     if is_file_run(filename):
         logging.info(filename + ' log was previously processed')
-        logging.info('Program end')
-        return True
-    parsed_log = get_log_from_logfile(filename)
-    report_data = get_calculated_report(parsed_log)
-    report_data = get_updated_report(report_data)
-    report_data = sorted(report_data, key=lambda d: d['time_avg'], reverse=True)[:config['REPORT_SIZE']]
-    save_report(report_data)
+    else:
+        parsed_log = get_log_from_logfile(filename)
+        report_data = get_calculated_report(parsed_log)
+        report_data = get_updated_report(report_data)
+        report_data = sorted(report_data, key=lambda d: d['time_avg'], reverse=True)[:config['REPORT_SIZE']]
+        save_report(report_data)
     set_timestamp()
     logging.info('Program end')
 
