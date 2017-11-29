@@ -1,0 +1,35 @@
+[2017-11-30 00:46:06,763] I Program end
+[2017-11-30 00:46:10,004] I Program end
+[2017-11-30 00:46:20,188] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:46:20,188] I Program end
+[2017-11-30 00:46:52,728] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:47:22,867] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:47:22,867] I Program end
+[2017-11-30 00:49:04,755] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:49:04,755] I Program end
+[2017-11-30 00:49:51,160] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:49:51,160] I Program end
+[2017-11-30 00:49:51,832] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:49:51,832] I Program end
+[2017-11-30 00:50:02,262] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:50:02,262] I Program end
+[2017-11-30 00:52:30,652] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:52:30,652] I Program end
+[2017-11-30 00:57:31,236] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:57:51,239] I Program end
+[2017-11-30 00:59:30,678] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 00:59:49,537] I Program end
+[2017-11-30 01:07:59,358] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:08:06,548] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:08:08,556] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:09:42,257] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:09:42,258] E create file for open log filenames
+Traceback (most recent call last):
+  File "log_analyzer.py", line 36, in is_file_run
+    with open(OPEN_LOGS_PATH, 'r') as f:
+IOError: [Errno 2] No such file or directory: 'open_log_names'
+[2017-11-30 01:10:01,435] I Program end
+[2017-11-30 01:10:51,542] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:10:51,542] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-11-30 01:11:04,019] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
+[2017-11-30 01:11:04,020] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
