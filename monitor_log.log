@@ -145,3 +145,5 @@ IOError: [Errno 2] No such file or directory: 'open_log_names'
 [2017-12-03 00:36:04,785] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
 [2017-12-03 00:36:04,786] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
 [2017-12-03 00:36:04,786] I Program end
+[2017-12-03 00:59:04,194] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-03 00:59:24,838] I Program end

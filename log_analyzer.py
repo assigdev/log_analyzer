@@ -130,7 +130,7 @@ class Report(object):
                 'count': len(time_list),
                 'time_max': max(time_list),
                 'time_sum': round(sum(time_list), 3),
-                'time_med': min(time_list)
+                'time_med': self._find_median(time_list)
             } for url, time_list in self.log.get_log().items()
         ]
 
@@ -159,6 +159,12 @@ class Report(object):
             with open(report_file_path, 'w') as wf:
                 wf.write(html)
 
+    def _find_median(self, lst):
+        n = len(lst)
+        if n % 2 == 1:
+            return sorted(lst)[n // 2]
+        else:
+            return sum(sorted(lst)[n // 2 - 1:n // 2 + 1]) / 2.0
 
 def main():
     conf = Configure()

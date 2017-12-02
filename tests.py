@@ -77,12 +77,12 @@ class ReportTestCase(unittest.TestCase):
         log_data = {
                 '/url1': [0.123, 0.1, 0.23, 0.233],
                 '/url2': [0.5],
-                # '/url3': [1.123, 0.02, 0.223, 0.344],
+                '/url3': [1.1, 0.1, 0.2, 0.4, 0.3],
         }
         log = LogParser(Configure())
         log.log = log_data
-        all_count = 5
-        all_time = 1.186
+        all_count = 10
+        all_time = 3.286
         self.report_data = [
             {
                 'url': '/url2',
@@ -95,11 +95,21 @@ class ReportTestCase(unittest.TestCase):
                 'time_perc': round(0.5 / all_time * 100, 3)
             },
             {
+                'url': '/url3',
+                'count': 5,
+                'time_max': 1.1,
+                'time_sum': 2.1,
+                'time_med': 0.3,
+                'time_avg': round(2.1 / 5, 3),
+                'count_perc': round(5.0 / all_count * 100, 4),
+                'time_perc': round(2.1 / all_time * 100, 3)
+            },
+            {
                 'url': '/url1',
                 'count': 4,
                 'time_max': 0.233,
                 'time_sum': 0.686,
-                'time_med': 0.1,
+                'time_med': 0.1765,
                 'time_avg': 0.686/4,
                 'count_perc': round(4.0/all_count*100, 4),
                 'time_perc': round(0.686/all_time*100, 3),
