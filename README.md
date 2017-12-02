@@ -14,7 +14,7 @@
 
 *python log_analyzer.py --config log.conf*
 
-пример конфигурационного файла: conf_example.conf
+пример конфигурационного файла: tests_fixtures/conf_example.conf
 
 ### Тестирование
 
