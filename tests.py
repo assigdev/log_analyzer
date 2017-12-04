@@ -3,40 +3,58 @@ import os
 import errno
 import shutil
 from tests_fixtures.data import LOG_DATA, LOG_FILE_DATA
-from log_analyzer import Configure, LogParser, Report
+from log_analyzer import config, calculate_report, parse_logfile
+from log_analyzer import find_last_log_file_path, get_log_date_name, parse_log_line
 
 
-class ConfigureTestCase(unittest.TestCase):
+class FindLastLogFilePathTestCase(unittest.TestCase):
     def setUp(self):
-        self.conf = Configure()
-
-    def test_default_config(self):
-        self.assertEqual(self.conf.get_config('REPORT_SIZE'), 1000)
-        self.assertEqual(self.conf.get_config('REPORT_DIR'), './reports')
-        self.assertEqual(self.conf.get_config('LOG_DIR'), './log')
-
-
-class LogParserTestCase(unittest.TestCase):
-    def setUp(self):
-        self.log_parse = LogParser(Configure())
-
-        # for find_last_log_file_path
-        path = 'test_log'
-        self.log_parse.conf._config['LOG_DIR'] = path
+        self.path = 'test_log'
+        self.conf = config.copy()
+        self.conf['LOG_DIR'] = self.path
         try:
-            os.makedirs(path)
+            os.makedirs(self.path)
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 raise
-        self.first_file = path+"/nginx-access-ui.log-20170630"
-        self.second_file = path+"/nginx-access-ui.log-20170631"
+        self.first_file = self.path+"/nginx-access-ui.log-20170630"
+        self.second_file = self.path+"/nginx-access-ui.log-20170631"
         f1 = open(self.first_file, 'a')
         f1.close()
         f2 = open(self.second_file, 'a')
-        f2.write(LOG_FILE_DATA)
         f2.close()
 
-        # for parse_log_line
+    def tearDown(self):
+        shutil.rmtree(self.conf['LOG_DIR'])
+
+    def test_find_last_log_file_path(self):
+        self.assertEqual(find_last_log_file_path(self.conf), self.second_file)
+        self.assertNotEqual(find_last_log_file_path(self.conf), self.first_file)
+
+
+class ParseLogfileTestCase(unittest.TestCase):
+    def setUp(self):
+
+        self.path = 'test_log'
+        try:
+            os.makedirs(self.path)
+        except OSError as exception:
+            if exception.errno != errno.EEXIST:
+                raise
+        self.log_file_path = self.path + "/nginx-access-ui.log-20170630"
+        f = open(self.log_file_path, 'a')
+        f.write(LOG_FILE_DATA)
+        f.close()
+
+    def tearDown(self):
+        shutil.rmtree(self.path)
+
+    def test_parse_logfile(self):
+        self.assertEqual(parse_logfile(self.log_file_path, config), LOG_DATA)
+
+
+class ParseLogLine(unittest.TestCase):
+    def setUp(self):
         self.line_1 = '1.196.116.32 -  - [29/Jun/2017:03:50:22 +0300] "GET /api/v2/banner/25019354 HTTP/1.1" 200 927 "-" "Lynx/2.8.8dev.9 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/2.10.5" "-" "1498697422-2190034393-4708-9752759" "dc7161be3" 0.390'
         self.line_1_result = '/api/v2/banner/25019354', 0.390
         self.line_2 = '1.169.137.128 -  - [29/Jun/2017:03:50:22 +0300] "GET /api/v2/banner/16852664 HTTP/1.1" 200 19415 "-" "Slotovod" "-" "1498697422-2118016444-4708-9752769" "712e90144abee9" 0.199'
@@ -45,42 +63,33 @@ class LogParserTestCase(unittest.TestCase):
         self.line_3_result = '/api/v2/banner/1717161', 0.138
         self.line_3_bad_result = '/api/v2/banner/1717161', 0.136
 
-    def tearDown(self):
-        shutil.rmtree(self.log_parse.conf._config['LOG_DIR'])
-
-    def test_find_last_log_file_path(self):
-        self.log_parse.find_last_log_file_path()
-        self.assertEqual(self.log_parse.log_file_path, self.second_file)
-        self.assertNotEqual(self.log_parse.log_file_path, self.first_file)
-
-    def test_parse_logfile(self):
-        self.log_parse.find_last_log_file_path()
-        self.log_parse.parse_logfile()
-        self.assertEqual(self.log_parse.get_log(), LOG_DATA)
-
     def test_parse_log_line(self):
-        self.assertEqual(self.log_parse._parse_log_line(self.line_1), self.line_1_result)
-        self.assertEqual(self.log_parse._parse_log_line(self.line_2), self.line_2_result)
-        self.assertEqual(self.log_parse._parse_log_line(self.line_3), self.line_3_result)
-        self.assertNotEqual(self.log_parse._parse_log_line(self.line_3), self.line_3_bad_result)
+        self.assertEqual(parse_log_line(self.line_1, config), self.line_1_result)
+        self.assertEqual(parse_log_line(self.line_2, config), self.line_2_result)
+        self.assertEqual(parse_log_line(self.line_3, config), self.line_3_result)
+        self.assertNotEqual(parse_log_line(self.line_3, config), self.line_3_bad_result)
+
+
+class GetLogDateNameTestCase(unittest.TestCase):
+    def setUp(self):
+        self.test_data = {
+            '/nginx-access-ui.log-20170630': '20170630',
+            '/nginx-access-ui.log-20170419': '20170419',
+        }
 
     def test_get_log_date_name(self):
-        self.log_parse.log_file_path = '/nginx-access-ui.log-20170630'
-        self.assertEqual(self.log_parse.get_log_date_name(), '20170630')
-        self.log_parse.log_file_path = '/nginx-access-ui.log-20170419'
-        self.assertEqual(self.log_parse.get_log_date_name(), '20170419')
+        for key in self.test_data:
+            self.assertEqual(get_log_date_name(key), self.test_data[key])
 
 
-class ReportTestCase(unittest.TestCase):
+class CalculateReportTestCase(unittest.TestCase):
     def setUp(self):
         self.maxDiff = None
-        log_data = {
+        self.log_data = {
                 '/url1': [0.123, 0.1, 0.23, 0.233],
                 '/url2': [0.5],
                 '/url3': [1.1, 0.1, 0.2, 0.4, 0.3],
         }
-        log = LogParser(Configure())
-        log.log = log_data
         all_count = 10
         all_time = 3.286
         self.report_data = [
@@ -115,11 +124,9 @@ class ReportTestCase(unittest.TestCase):
                 'time_perc': round(0.686/all_time*100, 3),
             }
         ]
-        self.report = Report(log, Configure())
 
     def test_calculate_report(self):
-        self.report.calculate_report()
-        self.assertEqual(self.report.report_data, self.report_data)
+        self.assertEqual(calculate_report(self.log_data, config), self.report_data)
 
 
 if __name__ == '__main__':

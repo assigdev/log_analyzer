@@ -1,149 +1,271 @@
-[2017-11-30 00:46:06,763] I Program end
-[2017-11-30 00:46:10,004] I Program end
-[2017-11-30 00:46:20,188] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:46:20,188] I Program end
-[2017-11-30 00:46:52,728] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:47:22,867] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:47:22,867] I Program end
-[2017-11-30 00:49:04,755] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:49:04,755] I Program end
-[2017-11-30 00:49:51,160] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:49:51,160] I Program end
-[2017-11-30 00:49:51,832] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:49:51,832] I Program end
-[2017-11-30 00:50:02,262] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:50:02,262] I Program end
-[2017-11-30 00:52:30,652] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:52:30,652] I Program end
-[2017-11-30 00:57:31,236] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:57:51,239] I Program end
-[2017-11-30 00:59:30,678] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 00:59:49,537] I Program end
-[2017-11-30 01:07:59,358] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:08:06,548] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:08:08,556] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:09:42,257] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:09:42,258] E create file for open log filenames
+[2017-12-04 15:48:15,109] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:48:15,109] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:48:15,111] I Program end
+[2017-12-04 15:48:16,913] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:48:16,914] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:48:16,914] I Program end
+[2017-12-04 15:56:57,822] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:56:57,822] E list index out of range
 Traceback (most recent call last):
-  File "log_analyzer.py", line 36, in is_file_run
-    with open(OPEN_LOGS_PATH, 'r') as f:
-IOError: [Errno 2] No such file or directory: 'open_log_names'
-[2017-11-30 01:10:01,435] I Program end
-[2017-11-30 01:10:51,542] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:10:51,542] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
-[2017-11-30 01:11:04,019] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:11:04,020] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
-[2017-11-30 01:52:36,075] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:52:36,076] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
-[2017-11-30 01:52:36,076] I Program end
-[2017-11-30 01:52:59,307] I Start program with config {'REPORT_DIR': './reports', 'REPORT_SIZE': 1000, 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts'}
-[2017-11-30 01:53:16,493] I Program end
-[2017-12-02 17:58:50,698] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:01:15,266] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:01:15,266] I Program end
-[2017-12-02 18:01:38,605] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:01:38,605] I Program end
-[2017-12-02 18:01:52,126] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:02:42,218] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:02:42,218] I Program end
-[2017-12-02 18:03:14,659] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:03:14,660] I Program end
-[2017-12-02 18:03:19,587] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:03:19,588] I Program end
-[2017-12-02 18:03:52,717] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:03:52,717] I Program end
-[2017-12-02 18:04:32,005] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:04:32,005] I Program end
-[2017-12-02 18:04:48,014] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:04:48,014] I Program end
-[2017-12-02 18:04:50,598] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:04:50,599] I Program end
-[2017-12-02 18:04:51,325] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:04:51,325] I Program end
-[2017-12-02 18:05:08,107] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:05:10,634] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:05:15,096] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:05:15,096] I Program end
-[2017-12-02 18:06:45,036] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:06:45,037] I Program end
-[2017-12-02 18:06:52,122] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:06:52,122] I Program end
-[2017-12-02 18:06:53,134] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:06:53,134] I Program end
-[2017-12-02 18:07:00,261] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:07:00,262] I Program end
-[2017-12-02 18:45:06,177] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:45:06,178] I Program end
-[2017-12-02 18:50:01,365] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:01,365] I Program end
-[2017-12-02 18:50:07,053] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:07,054] I Program end
-[2017-12-02 18:50:12,125] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:12,125] I Program end
-[2017-12-02 18:50:13,940] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:13,940] I Program end
-[2017-12-02 18:50:25,673] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:25,673] I Program end
-[2017-12-02 18:50:28,700] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 18:50:28,701] I Program end
-[2017-12-02 20:01:53,398] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 20:02:03,047] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 20:02:48,346] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 20:03:58,588] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 20:04:58,967] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 20:04:58,968] I Program end
-[2017-12-02 21:29:53,390] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:29:53,391] I Program end
-[2017-12-02 21:29:54,651] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:29:54,651] I Program end
-[2017-12-02 21:34:44,538] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:34:44,538] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:34:44,538] I Program end
-[2017-12-02 21:34:51,742] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:34:51,742] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:34:51,744] I Program end
-[2017-12-02 21:35:28,653] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:35:28,653] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:35:28,654] I Program end
-[2017-12-02 21:36:52,714] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:36:52,715] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:36:52,715] I Program end
-[2017-12-02 21:37:32,315] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:37:32,316] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:37:32,316] I Program end
-[2017-12-02 21:44:35,123] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:44:35,124] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:44:35,124] I Program end
-[2017-12-02 21:48:39,071] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:48:39,072] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:48:39,072] I Program end
-[2017-12-02 21:48:50,044] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:48:50,045] I ./log/nginx-access-ui.log-20170632.gz log was previously processed
-[2017-12-02 21:48:50,045] I Program end
-[2017-12-02 21:51:24,406] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:24,407] I Program end
-[2017-12-02 21:51:28,080] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:28,080] I Program end
-[2017-12-02 21:51:29,424] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:29,424] I Program end
-[2017-12-02 21:51:35,707] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:35,708] I Program end
-[2017-12-02 21:51:43,342] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:43,343] I Program end
-[2017-12-02 21:51:44,183] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:44,184] I Program end
-[2017-12-02 21:51:45,315] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:51:45,316] I Program end
-[2017-12-02 21:51:55,350] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:57:30,200] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 21:59:52,304] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 22:00:12,370] I Program end
-[2017-12-02 22:00:46,628] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'SAVE_REPORTS': '.reports', 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-02 22:01:06,455] I Program end
-[2017-12-03 00:33:25,088] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-03 00:33:46,208] I Program end
-[2017-12-03 00:36:04,785] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-03 00:36:04,786] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
-[2017-12-03 00:36:04,786] I Program end
-[2017-12-03 00:59:04,194] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
-[2017-12-03 00:59:24,838] I Program end
+  File "log_analyzer.py", line 185, in <module>
+    main()
+  File "log_analyzer.py", line 171, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:57:19,507] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:57:19,508] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 185, in <module>
+    main()
+  File "log_analyzer.py", line 171, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:57:42,357] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:57:42,358] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 185, in <module>
+    main()
+  File "log_analyzer.py", line 171, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:17,168] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:17,168] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:18,675] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:18,676] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:46,705] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:46,705] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:47,637] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:47,637] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:48,210] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:48,210] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:58:48,808] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:58:48,809] E list index out of range
+Traceback (most recent call last):
+  File "log_analyzer.py", line 187, in <module>
+    main()
+  File "log_analyzer.py", line 173, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 87, in find_last_log_file_path
+    return list_of_nginx_ui_log[-1]
+IndexError: list index out of range
+[2017-12-04 15:59:16,438] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:59:16,439] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:59:16,441] I Program end
+[2017-12-04 15:59:32,048] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:59:32,049] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:59:32,049] I Program end
+[2017-12-04 15:59:33,678] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:59:33,679] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:59:33,679] I Program end
+[2017-12-04 15:59:36,358] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:59:36,358] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:59:36,359] I Program end
+[2017-12-04 15:59:59,842] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 15:59:59,843] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 15:59:59,843] I Program end
+[2017-12-04 16:00:00,674] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:00:00,674] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:00:00,674] I Program end
+[2017-12-04 16:37:42,965] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:37:42,966] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:37:42,967] I Program end
+[2017-12-04 16:37:44,420] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:37:44,421] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:37:44,421] I Program end
+[2017-12-04 16:37:45,553] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:37:45,553] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:37:45,553] I Program end
+[2017-12-04 16:38:10,081] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:10,081] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:10,081] I Program end
+[2017-12-04 16:38:11,474] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:11,474] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:11,474] I Program end
+[2017-12-04 16:38:12,470] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:12,471] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:12,471] I Program end
+[2017-12-04 16:38:24,291] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:24,291] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:24,291] I Program end
+[2017-12-04 16:38:34,918] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:34,918] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:34,919] I Program end
+[2017-12-04 16:38:36,826] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:36,826] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:36,826] I Program end
+[2017-12-04 16:38:38,583] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:38,583] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:38:38,583] I Program end
+[2017-12-04 16:38:55,448] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:55,449] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0):
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:38:56,704] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:56,704] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0):
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:38:57,262] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:57,262] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0):
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:38:58,755] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:38:58,755] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0):
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:39:10,711] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:10,712] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0) is not None:
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:39:11,566] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:11,566] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0) is not None:
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:39:19,998] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:19,999] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0) is not None:
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:39:21,034] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:21,035] E 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "log_analyzer.py", line 195, in <module>
+    main()
+  File "log_analyzer.py", line 178, in main
+    log_file_path = find_last_log_file_path(conf)
+  File "log_analyzer.py", line 85, in find_last_log_file_path
+    if pr.group(0) is not None:
+AttributeError: 'NoneType' object has no attribute 'group'
+[2017-12-04 16:39:35,215] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:35,216] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:39:35,216] I Program end
+[2017-12-04 16:39:37,612] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:39:37,612] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:39:37,613] I Program end
+[2017-12-04 16:41:04,030] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:41:04,033] I Program end
+[2017-12-04 16:41:05,456] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:41:05,457] I ./log/nginx-access-ui.log-201706303 log was previously processed
+[2017-12-04 16:41:05,457] I Program end
+[2017-12-04 16:41:22,683] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:41:22,684] I ./log/nginx-access-ui.log-201706303 log was previously processed
+[2017-12-04 16:41:22,684] I Program end
+[2017-12-04 16:41:35,260] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:41:35,260] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:41:35,260] I Program end
+[2017-12-04 16:41:55,913] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:41:55,914] I Program end
+[2017-12-04 16:46:24,219] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:46:24,220] I ./log/nginx-access-ui.log-20170630defef log was previously processed
+[2017-12-04 16:46:24,220] I Program end
+[2017-12-04 16:48:05,534] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 16:48:05,535] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 16:48:05,535] I Program end
+[2017-12-04 17:06:02,746] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:06:21,632] I Program end
+[2017-12-04 17:06:45,109] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:06:45,110] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:06:45,110] I Program end
+[2017-12-04 17:09:32,728] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:09:32,728] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:09:32,728] I Program end
+[2017-12-04 17:14:34,682] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:14:34,683] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:14:34,683] I Program end
+[2017-12-04 17:17:52,087] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:17:52,087] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:17:52,087] I Program end
+[2017-12-04 17:38:15,071] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:38:15,072] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:38:15,072] I Program end
+[2017-12-04 17:38:27,462] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:38:46,339] I Program end
+[2017-12-04 17:38:53,524] I Start program with config {'REPORT_DIR': './reports', 'MONITOR_LOG': 'monitor_log.log', 'LOG_DIR': './log', 'TS_FILE_PATH': '/var/tmp/log_analyzer.ts', 'URL_POS': 7, 'REPORT_SIZE': 1000, 'CONFIG_DEFAULT_PATH': '/usr/local/etc/log_analyzer.conf', 'REQUEST_TIME_POS': -1}
+[2017-12-04 17:38:53,525] I ./log/nginx-access-ui.log-20170630.gz log was previously processed
+[2017-12-04 17:38:53,525] I Program end
