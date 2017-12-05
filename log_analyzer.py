@@ -11,8 +11,11 @@ import glob
 import gzip
 import json
 import logging
+import os
 import re
 import time
+from collections import defaultdict, namedtuple
+from operator import attrgetter
 from string import Template
 
 import configparser
@@ -24,14 +27,12 @@ config = {
             "MONITOR_LOG": "monitor_log.log",
             "TS_FILE_PATH": "/var/tmp/log_analyzer.ts",
             "CONFIG_DEFAULT_PATH": '/usr/local/etc/log_analyzer.conf',
-            "REQUEST_TIME_POS": -1,
-            "URL_POS": 7
         }
 
 
 def parse_config(conf, config_path):
     config_from_file = configparser.ConfigParser()
-    config_from_file.read(config_path or conf['CONFIG_DEFAULT_PATH'])
+    config_from_file.read(config_path)
     new_config = {}
     if 'CONFIG' in config_from_file:
         for option in config_from_file['CONFIG']:
@@ -44,77 +45,66 @@ def parse_config(conf, config_path):
     return conf
 
 
-def set_timestamp(conf):
-    with open(conf['TS_FILE_PATH'], 'a') as af:
+def set_timestamp(path):
+    with open(path, 'a') as af:
         af.write(str(time.time()) + '\n')
 
 
-def get_parsed_args():
+def get_parsed_args(config_default_path):
     parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", help="config file path", nargs=1)
+    parser.add_argument("-c", "--config", default=config_default_path, help="config file path", nargs=1)
     return parser.parse_args()
 
 
-def get_log_date_name(log_file_path):
-    ''' Отдаем дату из название файла '''
-    filename = log_file_path.split('/')[-1]
-    if filename.endswith(".gz"):
-        filename = filename[:-3]
-    return filename[-8:]
-
-
-def is_log_parsed(log_date_name, conf):
+def is_log_parsed(log_date_name, report_dir):
     ''' Если существует report.html, совпадающий с датой в имени nginx-access-ui.log,
         то считаем, что лог уже парсился '''
-    date_name = log_date_name
-    list_of_files = glob.glob(conf["REPORT_DIR"]+'/*')
-    for filename in list_of_files:
-        if filename.find(date_name) != -1:
-            return True
-    return False
+    report_path = os.path.join(report_dir, "report-{0}.html".format(log_date_name))
+    if os.path.exists(report_path):
+        return True
+    else:
+        return False
 
 
-def find_last_log_file_path(conf):
+def find_last_log_file(log_dir):
+    LogFile = namedtuple('LogFile', ['path', 'date_name'])
+
     # паттерн для поиска ui nginx логов с датой из 8 символов в названии.
-    pattern = re.compile(r'nginx-access-ui.log-(\d{8})\D*')
-
-    list_of_files = glob.glob(conf["LOG_DIR"]+'/*')
+    pattern = re.compile(r'nginx-access-ui\.log-\D*(?P<date_name>\d{8})\D*\.(gz|log|txt)$')
+    list_of_files = glob.glob(log_dir + '/*')
     list_of_nginx_ui_log = []
     for filename in list_of_files:
         result = pattern.search(filename)
         if result:
-            list_of_nginx_ui_log.append(filename)
-    list_of_nginx_ui_log.sort()
+            list_of_nginx_ui_log.append(LogFile(path=filename, date_name=result.group('date_name')))
     if list_of_nginx_ui_log:
+        sorted(list_of_nginx_ui_log, key=attrgetter('date_name'))
         return list_of_nginx_ui_log[-1]
     else:
-        return ''
+        return None
 
 
-def parse_log_line(line, conf):
+def parse_log_line(line):
     line_rows = line.split(' ')
-    url = line_rows[conf['URL_POS']]
-    request_time = float(line_rows[conf['REQUEST_TIME_POS']])
+    url = line_rows[7]
+    request_time = float(line_rows[-1])
     return url, round(request_time, 3)
 
 
-def parse_logfile(log_file_path, conf):
-    log = {}
+def parse_logfile(log_file_path):
+    log = defaultdict(list)
     if log_file_path.endswith(".gz"):
         log_file = gzip.open(log_file_path, 'rb')
     else:
         log_file = open(log_file_path)
     for line in log_file:
-        url, request_time = parse_log_line(line, conf)
-        if url in log:
-            log[url].append(request_time)
-        else:
-            log[url] = [request_time]
+        url, request_time = parse_log_line(line)
+        log[url].append(request_time)
     log_file.close()
     return log
 
 
-def calculate_report(log, conf):
+def calculate_report(log, report_size):
     logs_count = 0
     logs_time = 0
     report_data = []
@@ -144,14 +134,13 @@ def calculate_report(log, conf):
         )
         report_data[i] = entry
 
-    report_data = sorted(report_data, key=lambda d: d['time_avg'], reverse=True)[:conf['REPORT_SIZE']]
+    report_data = sorted(report_data, key=lambda d: d['time_avg'], reverse=True)[:report_size]
     return report_data
 
 
-def save_report(report_data, conf, log_date_name):
+def save_report(report_data, report_dir, log_date_name):
     table_json = json.dumps(report_data)
-    report_file_path = "{0}/report-{1}.html".format(conf['REPORT_DIR'],
-                                                    log_date_name)
+    report_file_path = "{0}/report-{1}.html".format(report_dir, log_date_name)
     with open('report.html', 'r') as f:
         html = Template(f.read()).safe_substitute(table_json=table_json)
         with open(report_file_path, 'w') as wf:
@@ -166,26 +155,27 @@ def find_median(lst):
         return sum(sorted(lst)[n // 2 - 1:n // 2 + 1]) / 2.0
 
 
+def base(conf):
+    log_file = find_last_log_file(conf["LOG_DIR"])
+    if not log_file:
+        logging.info('Log file not found in log directory')
+        return
+    if is_log_parsed(log_file.date_name, conf['REPORT_DIR']):
+        logging.info(log_file.path + ' log was previously processed')
+    else:
+        log = parse_logfile(log_file.path)
+        report = calculate_report(log, conf['REPORT_SIZE'])
+        save_report(report, conf['REPORT_DIR'], log_file.date_name)
+
+
 def main():
-    global config
-    args = get_parsed_args()
+    args = get_parsed_args(config['CONFIG_DEFAULT_PATH'])
     conf = parse_config(config, args.config)
     logging.basicConfig(filename=conf['MONITOR_LOG'], level=logging.INFO,
                         format='[%(asctime)s] %(levelname).1s %(message)s')
-
     logging.info('Start program with config ' + str(conf))
-    log_file_path = find_last_log_file_path(conf)
-    if not log_file_path:
-        logging.exception('Log file not found in log directory')
-        return 0
-    log_date_name = get_log_date_name(log_file_path)
-    if is_log_parsed(log_date_name, conf):
-        logging.info(log_file_path + ' log was previously processed')
-    else:
-        log = parse_logfile(log_file_path, conf)
-        report = calculate_report(log, conf)
-        save_report(report, conf, log_date_name)
-    set_timestamp(conf)
+    base(conf)
+    set_timestamp(conf['TS_FILE_PATH'])
     logging.info('Program end')
 
 
