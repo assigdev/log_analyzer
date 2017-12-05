@@ -2,7 +2,7 @@ import unittest
 import os
 import errno
 import shutil
-from tests_fixtures.data import LOG_DATA, LOG_FILE_DATA
+from tests_fixtures.data import LOG_DATA, LOG_FILE_DATA, LOG_FILE_WRONG_DATA, LOG_WRONG_DATA
 from log_analyzer import config, calculate_report, parse_logfile
 from log_analyzer import find_last_log_file, parse_log_line
 
@@ -10,8 +10,10 @@ from log_analyzer import find_last_log_file, parse_log_line
 class FindLastLogFilePathTestCase(unittest.TestCase):
     def setUp(self):
         self.path = 'test_log'
+        self.path2 = 'test_log_null'
         try:
             os.makedirs(self.path)
+            os.makedirs(self.path2)
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 raise
@@ -24,31 +26,50 @@ class FindLastLogFilePathTestCase(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.path)
+        shutil.rmtree(self.path2)
 
     def test_find_last_log_file_path(self):
         self.assertEqual(find_last_log_file(self.path).path, self.second_file)
         self.assertNotEqual(find_last_log_file(self.path).path, self.first_file)
+        self.assertIsNotNone(find_last_log_file(self.path))
+
+    def test_not_log_file(self):
+        self.assertIsNone(find_last_log_file(self.path2))
 
 
 class ParseLogfileTestCase(unittest.TestCase):
     def setUp(self):
 
         self.path = 'test_log'
+        self.bad_gzip_path = './tests_fixtures/bad_gz.gz'
         try:
             os.makedirs(self.path)
         except OSError as exception:
             if exception.errno != errno.EEXIST:
                 raise
         self.log_file_path = self.path + "/nginx-access-ui.log-20170630"
+        self.log_file_path2 = self.path + "/nginx-access-ui.log-20170631"
         f = open(self.log_file_path, 'a')
         f.write(LOG_FILE_DATA)
         f.close()
+        f2 = open(self.log_file_path2, 'a')
+        f2.write(LOG_FILE_WRONG_DATA)
+        f2.close()
 
     def tearDown(self):
         shutil.rmtree(self.path)
 
     def test_parse_logfile(self):
         self.assertEqual(parse_logfile(self.log_file_path), LOG_DATA)
+
+    def test_parse_wrong_data(self):
+        self.assertEqual(parse_logfile(self.log_file_path2), LOG_WRONG_DATA)
+
+    def test_bad_gzip_open(self):
+        with self.assertRaises(Exception) as context:
+            parse_logfile(self.bad_gzip_path)
+        print context.exception
+        self.assertTrue('Not a gzipped file' in context.exception)
 
 
 class ParseLogLine(unittest.TestCase):

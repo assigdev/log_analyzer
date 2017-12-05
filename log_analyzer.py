@@ -7,7 +7,6 @@
 #                     '$request_time';
 
 import argparse
-import glob
 import gzip
 import json
 import logging
@@ -50,9 +49,9 @@ def set_timestamp(path):
         af.write(str(time.time()) + '\n')
 
 
-def get_parsed_args(config_default_path):
+def get_parsed_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", default=config_default_path, help="config file path", nargs=1)
+    parser.add_argument("-c", "--config", default=config['CONFIG_DEFAULT_PATH'], help="config file path", nargs=1)
     return parser.parse_args()
 
 
@@ -71,12 +70,12 @@ def find_last_log_file(log_dir):
 
     # паттерн для поиска ui nginx логов с датой из 8 символов в названии.
     pattern = re.compile(r'nginx-access-ui\.log-\D*(?P<date_name>\d{8})\D*\.(gz|log|txt)$')
-    list_of_files = glob.glob(log_dir + '/*')
+    list_of_files = os.listdir(log_dir)
     list_of_nginx_ui_log = []
     for filename in list_of_files:
         result = pattern.search(filename)
         if result:
-            list_of_nginx_ui_log.append(LogFile(path=filename, date_name=result.group('date_name')))
+            list_of_nginx_ui_log.append(LogFile(path=os.path.join(log_dir, filename), date_name=result.group('date_name')))
     if list_of_nginx_ui_log:
         sorted(list_of_nginx_ui_log, key=attrgetter('date_name'))
         return list_of_nginx_ui_log[-1]
@@ -93,13 +92,21 @@ def parse_log_line(line):
 
 def parse_logfile(log_file_path):
     log = defaultdict(list)
+    error_line_count = 0
+    line_count = 0
     if log_file_path.endswith(".gz"):
         log_file = gzip.open(log_file_path, 'rb')
     else:
         log_file = open(log_file_path)
     for line in log_file:
-        url, request_time = parse_log_line(line)
-        log[url].append(request_time)
+        try:
+            url, request_time = parse_log_line(line)
+            log[url].append(request_time)
+        except (ValueError, IndexError):
+            error_line_count += 1
+        line_count += 1
+    error_percent = round(float(error_line_count)/line_count * 100)
+    logging.info("{0} line parse, {1} ({2}%) with errors".format(line_count, error_line_count, error_percent))
     log_file.close()
     return log
 
@@ -141,10 +148,9 @@ def calculate_report(log, report_size):
 def save_report(report_data, report_dir, log_date_name):
     table_json = json.dumps(report_data)
     report_file_path = "{0}/report-{1}.html".format(report_dir, log_date_name)
-    with open('report.html', 'r') as f:
+    with open('report.html', 'r') as f, open(report_file_path, 'w') as wf:
         html = Template(f.read()).safe_substitute(table_json=table_json)
-        with open(report_file_path, 'w') as wf:
-            wf.write(html)
+        wf.write(html)
 
 
 def find_median(lst):
@@ -162,14 +168,18 @@ def base(conf):
         return
     if is_log_parsed(log_file.date_name, conf['REPORT_DIR']):
         logging.info(log_file.path + ' log was previously processed')
-    else:
+        return
+    try:
         log = parse_logfile(log_file.path)
-        report = calculate_report(log, conf['REPORT_SIZE'])
-        save_report(report, conf['REPORT_DIR'], log_file.date_name)
+    except IOError:
+        logging.error("file is broken")
+        return
+    report = calculate_report(log, conf['REPORT_SIZE'])
+    save_report(report, conf['REPORT_DIR'], log_file.date_name)
 
 
 def main():
-    args = get_parsed_args(config['CONFIG_DEFAULT_PATH'])
+    args = get_parsed_args()
     conf = parse_config(config, args.config)
     logging.basicConfig(filename=conf['MONITOR_LOG'], level=logging.INFO,
                         format='[%(asctime)s] %(levelname).1s %(message)s')
