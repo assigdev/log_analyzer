@@ -57,6 +57,14 @@ LOG_FILE_WRONG_DATA = '''f032b48fb33e1e692  123  1.196.116.32  GET python-reques
 545a7b821307935d 33 1.200.76.128 POST python
 1.200.76.128 f032b48fb33e1e692  - [29/Jun/2017:03:50:24 +0300] "GET /api/1/campaigns/?id=7789711 HTTP/1.1" 200 608 "-" "-" "-" "1498697424-4102637017-4708-9752795" "-" 0.163
 1.168.229.112 545a7b821307935d  - [29/Jun/2017:03:50:24 +0300] "GET /agency/banners_stats/?date1=26-06-2017&date2=28-06-2017&date_type=day&do=1&rt=campaign&oi=5370438&as_json=1 HTTP/1.1" 200 316 "-" "python-requests/2.13.0" "-" "1498697417-743364018-4708-9752674" "-" 6.828
+'''
+LOG_FILE_WRONG_DATA_ERRORS = '''f032b48fb33e1e692  123  1.196.116.32  GET python-requests/2.13.0
+545a7b821307935d  333  1.196.116.33  GET python-requests/2.13.0
+545a7b821307935d 33 1.200.76.128 POST python
+545a7b821307935d 33 1.200.76.128 POST python
+545a7b821307935d 33 1.200.76.128 POST python
+1.200.76.128 f032b48fb33e1e692  - [29/Jun/2017:03:50:24 +0300] "GET /api/1/campaigns/?id=7789711 HTTP/1.1" 200 608 "-" "-" "-" "1498697424-4102637017-4708-9752795" "-" 0.163
+1.168.229.112 545a7b821307935d  - [29/Jun/2017:03:50:24 +0300] "GET /agency/banners_stats/?date1=26-06-2017&date2=28-06-2017&date_type=day&do=1&rt=campaign&oi=5370438&as_json=1 HTTP/1.1" 200 316 "-" "python-requests/2.13.0" "-" "1498697417-743364018-4708-9752674" "-" 6.828
 
 
 '''

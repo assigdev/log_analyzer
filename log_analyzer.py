@@ -12,6 +12,7 @@ import json
 import logging
 import os
 import re
+import sys
 import time
 from collections import defaultdict, namedtuple
 from operator import attrgetter
@@ -77,8 +78,7 @@ def find_last_log_file(log_dir):
         if result:
             list_of_nginx_ui_log.append(LogFile(path=os.path.join(log_dir, filename), date_name=result.group('date_name')))
     if list_of_nginx_ui_log:
-        sorted(list_of_nginx_ui_log, key=attrgetter('date_name'))
-        return list_of_nginx_ui_log[-1]
+        return max(list_of_nginx_ui_log, key=attrgetter('date_name'))
     else:
         return None
 
@@ -87,7 +87,7 @@ def parse_log_line(line):
     line_rows = line.split(' ')
     url = line_rows[7]
     request_time = float(line_rows[-1])
-    return url, round(request_time, 3)
+    return url.encode('utf-8'), round(request_time, 3)
 
 
 def parse_logfile(log_file_path):
@@ -100,12 +100,14 @@ def parse_logfile(log_file_path):
         log_file = open(log_file_path)
     for line in log_file:
         try:
-            url, request_time = parse_log_line(line)
+            url, request_time = parse_log_line(line.decode('ascii'))
             log[url].append(request_time)
         except (ValueError, IndexError):
             error_line_count += 1
         line_count += 1
     error_percent = round(float(error_line_count)/line_count * 100)
+    if error_percent > 70:
+        raise IOError('Critical count of errors in log file')
     logging.info("{0} line parse, {1} ({2}%) with errors".format(line_count, error_line_count, error_percent))
     log_file.close()
     return log

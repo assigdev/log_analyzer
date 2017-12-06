@@ -2,7 +2,7 @@ import unittest
 import os
 import errno
 import shutil
-from tests_fixtures.data import LOG_DATA, LOG_FILE_DATA, LOG_FILE_WRONG_DATA, LOG_WRONG_DATA
+from tests_fixtures.data import LOG_DATA, LOG_FILE_DATA, LOG_FILE_WRONG_DATA, LOG_WRONG_DATA, LOG_FILE_WRONG_DATA_ERRORS
 from log_analyzer import config, calculate_report, parse_logfile
 from log_analyzer import find_last_log_file, parse_log_line
 
@@ -49,18 +49,27 @@ class ParseLogfileTestCase(unittest.TestCase):
                 raise
         self.log_file_path = self.path + "/nginx-access-ui.log-20170630"
         self.log_file_path2 = self.path + "/nginx-access-ui.log-20170631"
+        self.log_file_path3 = self.path + "/nginx-access-ui.log-20170731"
         f = open(self.log_file_path, 'a')
         f.write(LOG_FILE_DATA)
         f.close()
         f2 = open(self.log_file_path2, 'a')
         f2.write(LOG_FILE_WRONG_DATA)
         f2.close()
+        f3 = open(self.log_file_path3, 'a')
+        f3.write(LOG_FILE_WRONG_DATA_ERRORS)
+        f3.close()
 
     def tearDown(self):
         shutil.rmtree(self.path)
 
     def test_parse_logfile(self):
         self.assertEqual(parse_logfile(self.log_file_path), LOG_DATA)
+
+    def test_parse_wrong_data_max_percent_of_errors(self):
+        with self.assertRaises(Exception) as context:
+            parse_logfile(self.log_file_path3)
+        self.assertTrue('Critical count of errors in log file' in context.exception)
 
     def test_parse_wrong_data(self):
         self.assertEqual(parse_logfile(self.log_file_path2), LOG_WRONG_DATA)
