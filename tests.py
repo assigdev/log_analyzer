@@ -69,7 +69,7 @@ class ParseLogfileTestCase(unittest.TestCase):
     def test_parse_wrong_data_max_percent_of_errors(self):
         with self.assertRaises(Exception) as context:
             parse_logfile(self.log_file_path3)
-        self.assertTrue('Critical count of errors in log file' in context.exception)
+        self.assertTrue('file broken' in context.exception)
 
     def test_parse_wrong_data(self):
         self.assertEqual(parse_logfile(self.log_file_path2), LOG_WRONG_DATA)

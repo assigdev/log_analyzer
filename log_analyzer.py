@@ -107,7 +107,8 @@ def parse_logfile(log_file_path):
         line_count += 1
     error_percent = round(float(error_line_count)/line_count * 100)
     if error_percent > 70:
-        raise IOError('Critical count of errors in log file')
+        logging.error('Critical count of errors in log file: {0}%'.format(error_percent))
+        raise IOError('file broken')
     logging.info("{0} line parse, {1} ({2}%) with errors".format(line_count, error_line_count, error_percent))
     log_file.close()
     return log
