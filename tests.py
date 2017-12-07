@@ -64,20 +64,19 @@ class ParseLogfileTestCase(unittest.TestCase):
         shutil.rmtree(self.path)
 
     def test_parse_logfile(self):
-        self.assertEqual(parse_logfile(self.log_file_path), LOG_DATA)
+        self.assertEqual(parse_logfile(self.log_file_path, config['ERROR_MAX_PERCENT']), LOG_DATA)
 
     def test_parse_wrong_data_max_percent_of_errors(self):
         with self.assertRaises(Exception) as context:
-            parse_logfile(self.log_file_path3)
+            parse_logfile(self.log_file_path3, config['ERROR_MAX_PERCENT'])
         self.assertTrue('file broken' in context.exception)
 
     def test_parse_wrong_data(self):
-        self.assertEqual(parse_logfile(self.log_file_path2), LOG_WRONG_DATA)
+        self.assertEqual(parse_logfile(self.log_file_path2, config['ERROR_MAX_PERCENT']), LOG_WRONG_DATA)
 
     def test_bad_gzip_open(self):
         with self.assertRaises(Exception) as context:
-            parse_logfile(self.bad_gzip_path)
-        print context.exception
+            parse_logfile(self.bad_gzip_path, config['ERROR_MAX_PERCENT'])
         self.assertTrue('Not a gzipped file' in context.exception)
 
 

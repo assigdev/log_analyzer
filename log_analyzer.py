@@ -12,7 +12,6 @@ import json
 import logging
 import os
 import re
-import sys
 import time
 from collections import defaultdict, namedtuple
 from operator import attrgetter
@@ -27,6 +26,7 @@ config = {
             "MONITOR_LOG": "monitor_log.log",
             "TS_FILE_PATH": "/var/tmp/log_analyzer.ts",
             "CONFIG_DEFAULT_PATH": '/usr/local/etc/log_analyzer.conf',
+            "ERROR_MAX_PERCENT": 70
         }
 
 
@@ -90,7 +90,7 @@ def parse_log_line(line):
     return url.encode('utf-8'), round(request_time, 3)
 
 
-def parse_logfile(log_file_path):
+def parse_logfile(log_file_path, error_max_percent):
     log = defaultdict(list)
     error_line_count = 0
     line_count = 0
@@ -106,7 +106,7 @@ def parse_logfile(log_file_path):
             error_line_count += 1
         line_count += 1
     error_percent = round(float(error_line_count)/line_count * 100)
-    if error_percent > 70:
+    if error_percent > error_max_percent:
         logging.error('Critical count of errors in log file: {0}%'.format(error_percent))
         raise IOError('file broken')
     logging.info("{0} line parse, {1} ({2}%) with errors".format(line_count, error_line_count, error_percent))
@@ -173,7 +173,7 @@ def base(conf):
         logging.info(log_file.path + ' log was previously processed')
         return
     try:
-        log = parse_logfile(log_file.path)
+        log = parse_logfile(log_file.path, conf['ERROR_MAX_PERCENT'])
     except IOError:
         logging.error("file is broken")
         return
