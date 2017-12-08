@@ -30,6 +30,30 @@ config = {
         }
 
 
+def main():
+    args = get_parsed_args()
+    conf = parse_config(config, args.config)
+    logging.basicConfig(filename=conf['MONITOR_LOG'], level=logging.INFO,
+                        format='[%(asctime)s] %(levelname).1s %(message)s')
+    logging.info('Start program with config ' + str(conf))
+    base(conf)
+    set_timestamp(conf['TS_FILE_PATH'])
+    logging.info('Program end')
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        logging.error(e, exc_info=True)
+
+
+def get_parsed_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--config", default=config['CONFIG_DEFAULT_PATH'], help="config file path", nargs=1)
+    return parser.parse_args()
+
+
 def parse_config(conf, config_path):
     config_from_file = configparser.ConfigParser()
     config_from_file.read(config_path)
@@ -50,20 +74,21 @@ def set_timestamp(path):
         af.write(str(time.time()) + '\n')
 
 
-def get_parsed_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-c", "--config", default=config['CONFIG_DEFAULT_PATH'], help="config file path", nargs=1)
-    return parser.parse_args()
-
-
-def is_log_parsed(log_date_name, report_dir):
-    ''' Если существует report.html, совпадающий с датой в имени nginx-access-ui.log,
-        то считаем, что лог уже парсился '''
-    report_path = os.path.join(report_dir, "report-{0}.html".format(log_date_name))
-    if os.path.exists(report_path):
-        return True
-    else:
-        return False
+def base(conf):
+    log_file = find_last_log_file(conf["LOG_DIR"])
+    if not log_file:
+        logging.info('Log file not found in log directory')
+        return
+    if is_log_parsed(log_file.date_name, conf['REPORT_DIR']):
+        logging.info(log_file.path + ' log was previously processed')
+        return
+    try:
+        log = parse_logfile(log_file.path, conf['ERROR_MAX_PERCENT'])
+    except IOError:
+        logging.error("file is broken")
+        return
+    report = calculate_report(log, conf['REPORT_SIZE'])
+    save_report(report, conf['REPORT_DIR'], log_file.date_name)
 
 
 def find_last_log_file(log_dir):
@@ -83,11 +108,14 @@ def find_last_log_file(log_dir):
         return None
 
 
-def parse_log_line(line):
-    line_rows = line.split(' ')
-    url = line_rows[7]
-    request_time = float(line_rows[-1])
-    return url, round(request_time, 3)
+def is_log_parsed(log_date_name, report_dir):
+    ''' Если существует report.html, совпадающий с датой в имени nginx-access-ui.log,
+        то считаем, что лог уже парсился '''
+    report_path = os.path.join(report_dir, "report-{0}.html".format(log_date_name))
+    if os.path.exists(report_path):
+        return True
+    else:
+        return False
 
 
 def parse_logfile(log_file_path, error_max_percent):
@@ -112,6 +140,13 @@ def parse_logfile(log_file_path, error_max_percent):
     logging.info("{0} line parse, {1} ({2}%) with errors".format(line_count, error_line_count, error_percent))
     log_file.close()
     return log
+
+
+def parse_log_line(line):
+    line_rows = line.split(' ')
+    url = line_rows[7]
+    request_time = float(line_rows[-1])
+    return url, round(request_time, 3)
 
 
 def calculate_report(log, report_size):
@@ -148,14 +183,6 @@ def calculate_report(log, report_size):
     return report_data
 
 
-def save_report(report_data, report_dir, log_date_name):
-    table_json = json.dumps(report_data)
-    report_file_path = "{0}/report-{1}.html".format(report_dir, log_date_name)
-    with open('report.html', 'r',) as f, open(report_file_path, 'w') as wf:
-        html = Template(f.read()).safe_substitute(table_json=table_json)
-        wf.write(html.decode('utf-8'))
-
-
 def find_median(lst):
     n = len(lst)
     if n % 2 == 1:
@@ -164,36 +191,11 @@ def find_median(lst):
         return sum(sorted(lst)[n // 2 - 1:n // 2 + 1]) / 2.0
 
 
-def base(conf):
-    log_file = find_last_log_file(conf["LOG_DIR"])
-    if not log_file:
-        logging.info('Log file not found in log directory')
-        return
-    if is_log_parsed(log_file.date_name, conf['REPORT_DIR']):
-        logging.info(log_file.path + ' log was previously processed')
-        return
-    try:
-        log = parse_logfile(log_file.path, conf['ERROR_MAX_PERCENT'])
-    except IOError:
-        logging.error("file is broken")
-        return
-    report = calculate_report(log, conf['REPORT_SIZE'])
-    save_report(report, conf['REPORT_DIR'], log_file.date_name)
+def save_report(report_data, report_dir, log_date_name):
+    table_json = json.dumps(report_data)
+    report_file_path = "{0}/report-{1}.html".format(report_dir, log_date_name)
+    with open('report.html', 'r',) as f, open(report_file_path, 'w') as wf:
+        html = Template(f.read()).safe_substitute(table_json=table_json)
+        wf.write(html.decode('utf-8'))
 
 
-def main():
-    args = get_parsed_args()
-    conf = parse_config(config, args.config)
-    logging.basicConfig(filename=conf['MONITOR_LOG'], level=logging.INFO,
-                        format='[%(asctime)s] %(levelname).1s %(message)s')
-    logging.info('Start program with config ' + str(conf))
-    base(conf)
-    set_timestamp(conf['TS_FILE_PATH'])
-    logging.info('Program end')
-
-
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logging.error(e, exc_info=True)
