@@ -87,7 +87,7 @@ def parse_log_line(line):
     line_rows = line.split(' ')
     url = line_rows[7]
     request_time = float(line_rows[-1])
-    return url.encode('utf-8'), round(request_time, 3)
+    return url, round(request_time, 3)
 
 
 def parse_logfile(log_file_path, error_max_percent):
@@ -100,7 +100,7 @@ def parse_logfile(log_file_path, error_max_percent):
         log_file = open(log_file_path)
     for line in log_file:
         try:
-            url, request_time = parse_log_line(line.decode('ascii'))
+            url, request_time = parse_log_line(line.decode('utf-8'))
             log[url].append(request_time)
         except (ValueError, IndexError):
             error_line_count += 1
@@ -151,9 +151,9 @@ def calculate_report(log, report_size):
 def save_report(report_data, report_dir, log_date_name):
     table_json = json.dumps(report_data)
     report_file_path = "{0}/report-{1}.html".format(report_dir, log_date_name)
-    with open('report.html', 'r') as f, open(report_file_path, 'w') as wf:
+    with open('report.html', 'r',) as f, open(report_file_path, 'w') as wf:
         html = Template(f.read()).safe_substitute(table_json=table_json)
-        wf.write(html)
+        wf.write(html.decode('utf-8'))
 
 
 def find_median(lst):
