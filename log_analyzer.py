@@ -41,13 +41,6 @@ def main():
     logging.info('Program end')
 
 
-if __name__ == "__main__":
-    try:
-        main()
-    except Exception as e:
-        logging.error(e, exc_info=True)
-
-
 def get_parsed_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--config", default=config['CONFIG_DEFAULT_PATH'], help="config file path", nargs=1)
@@ -199,3 +192,8 @@ def save_report(report_data, report_dir, log_date_name):
         wf.write(html.decode('utf-8'))
 
 
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as e:
+        logging.error(e, exc_info=True)
